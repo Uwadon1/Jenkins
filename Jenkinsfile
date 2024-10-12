@@ -18,21 +18,21 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 // Initialize the Terraform working directory
-                sh 'cd Jenkins && terraform init'
+                sh 'terraform init'
             }
         }
 
         stage('Terraform Plan') {
             steps {
                 // Generate and display an execution plan
-                sh 'cd Jenkins && terraform plan' 
+                sh 'terraform plan' 
             }
         }
 
         stage('Terraform Apply') {
             steps {
                 // Apply the Terraform plan automatically
-                sh 'cd Jenkins && terraform  -auto-approve' 
+                sh 'terraform  -auto-approve' 
             }
         }
     }
