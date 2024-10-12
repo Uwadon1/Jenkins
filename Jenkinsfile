@@ -36,6 +36,13 @@ pipeline {
                 sh 'terraform apply --auto-approve' 
             }
         }
+
+         stage('Terraform Destroy') {
+            steps {
+                // Destroy the infrastructure automatically
+                sh 'terraform destroy --auto-approve'
+            }
+        }
     }
 
     post {
