@@ -4,7 +4,9 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-        TERRAFORM_HOME = tool name: 'Terraform', type: 'org.jenkinsci.plugins.terraform.TerraformInstallation'
+       tools {
+        terraform 'Terraform'  // Use the name you configured in the Global Tool Configuration
+    }
     }
 
 
