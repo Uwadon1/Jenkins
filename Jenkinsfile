@@ -4,11 +4,12 @@ pipeline {
     environment {
         AWS_ACCESS_KEY_ID     = credentials('AWS_ACCESS_KEY_ID')
         AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
-       tools {
-        terraform 'Terraform'  // Use the name you configured in the Global Tool Configuration
-    }
+
     }
 
+    tools {
+        terraform 'Terraform'  // Specify the Terraform installation name from the Global Tool Configuration
+    }
 
     stages {
         stage('Checkout Code') {
