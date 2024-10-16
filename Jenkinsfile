@@ -9,8 +9,9 @@ pipeline {
 
     tools {
         terraform 'Terraform'  // Specify the Terraform installation name from the Global Tool Configuration
+         git 'Git'  // Replace 'Git' with the name of your Git installation in Jenkins
     }
-
+  
     stages {
         stage('Checkout Code') {
             steps {
