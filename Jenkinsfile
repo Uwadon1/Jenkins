@@ -33,6 +33,14 @@ pipeline {
             }
         }
 
+           stage('Manual Approval') {
+            steps {
+                script {
+                    input message: 'Do you want to proceed with the deployment?', ok: 'Yes, deploy!'
+                }
+            }
+        }
+
         stage('Terraform Apply') {
             steps {
                 // Apply the Terraform plan automatically
